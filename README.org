@@ -27,6 +27,10 @@ cp pam_nextcloud.py /lib/security/
 cp nextcloud-login /etc/pam.d/
 #+END_EXAMPLE
 * Configuration
+Create the conf file that holds the url server
+#+BEGIN_EXAMPLE
+echo "https://url" > /etc/sync_os.conf
+#+END_EXAMPLE
 As root me need to modify some pam files, don't worry I got your back!.
 Open with any editor the file /etc/pam.d/common-auth
 Add this line.
