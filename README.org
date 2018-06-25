@@ -1,8 +1,6 @@
 #+OPTIONS: num:nil toc:nil
 #+TITLE: PAM__NEXTCLOUD
-#+BEGIN_VERSE
-The pam_nextcloud module is used to verifu an user against the database from a cloud service. The cloud service could be Nextcloud or Ownclou[not tested]. The idea is simple, convert any Linux distribution into a cloud OS, something similar to Chrome OS or Chromium OS, but not using any google service.
-#+END_VERSE
+The pam_nextcloud module is used to verify an user against the database from a cloud service. The cloud service could be Nextcloud or Ownclou[not tested]. The idea is simple, convert any Linux distribution into a cloud OS, something similar to Chrome OS or Chromium OS, but not using any google service.-
 * Motivation
 I started this project because I would like to use something similar to Chrome OS whitout Google Drive, and full Open Source. 
 * Getting Started
@@ -53,15 +51,3 @@ GNU General Public License v3.0 - [[https://github.com/nexhero/pam_nextcloud/blo
 The pam_nextcloud module is used to verify an user against nextcloud database.
 
 #+END_VERSE
-* Motivation
-#+BEGIN_VERSE
-I started this project, because there is not a full open source alternative to Operative System based in the cloud.
-#+END_VERSE
-* Getting Started
-This module was made using python, probably there will be a little
-delay at the moment the module is checking the username and the
-password, I suggest you to test in a virtual machine before to run in
-a production machine.
-* Prerequisites
-* Installing
-* Configuration
