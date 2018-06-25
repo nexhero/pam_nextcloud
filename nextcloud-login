@@ -1,0 +1,2 @@
+# Authenticate user using a cloud service.
+auth sufficient pam_python.so pam_nextcloud.py

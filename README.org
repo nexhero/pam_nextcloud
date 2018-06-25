@@ -1,0 +1,63 @@
+#+OPTIONS: num:nil toc:nil
+#+TITLE: PAM__NEXTCLOUD
+#+BEGIN_VERSE
+The pam_nextcloud module is used to verifu an user against the database from a cloud service. The cloud service could be Nextcloud or Ownclou[not tested]. The idea is simple, convert any Linux distribution into a cloud OS, something similar to Chrome OS or Chromium OS, but not using any google service.
+#+END_VERSE
+* Motivation
+I started this project because I would like to use something similar to Chrome OS whitout Google Drive, and full Open Source. 
+* Getting Started
+This module was made in python, you may get some delay at the moment the module is validating the username and password in the server, I suggest you to test in a virtual machine before to use in your personal computer.
+* Prerequisites
+** pam_python
+   [[http://pam-python.sourceforge.net/][pam-python]] is a pam module that runs the python interpreterm thus allowing PAM Modules to be written in python.
+** python-pip
+   [[https://pypi.org/project/pip/][pypi]] is a tool for install Python packages.
+** pyocclient
+   [[https://github.com/owncloud/pyocclient][pyocclient]] a python client library for owncloud/nextcloud.
+* Installing
+Clone the repository.
+#+BEGIN_EXAMPLE
+git clone https://github.com/nexhero/pam_nextcloud.git
+cd pam_nextcloud/
+#+END_EXAMPLE
+As root execute the next commands.
+#+BEGIN_EXAMPLE
+mkdir /lib/security
+cp pam_nextcloud.py /lib/security/
+cp nextcloud-login /etc/pam.d/
+#+END_EXAMPLE
+* Configuration
+As root me need to modify some pam files, don't worry I got your back!.
+Open with any editor the file /etc/pam.d/common-auth
+Add this line.
+#+BEGIN_EXAMPLE
+@include nextcloud-login
+#+END_EXAMPLE
+
+In the next line
+#+BEGIN_EXAMPLE
+auth	[success=1 default=ignore]	pam_unix.so nullok_secure
+#+END_EXAMPLE
+Change to.
+#+BEGIN_EXAMPLE
+auth	[success=1 default=ignore]	pam_unix.so nullok_secure try_first_pass
+#+END_EXAMPLE
+* Authors
+David Pereira <inexhero@gmail.com>
+* License
+GNU General Public License v3.0 - [[https://github.com/nexhero/pam_nextcloud/blob/master/LICENSE][LICENSE]]
+The pam_nextcloud module is used to verify an user against nextcloud database.
+
+#+END_VERSE
+* Motivation
+#+BEGIN_VERSE
+I started this project, because there is not a full open source alternative to Operative System based in the cloud.
+#+END_VERSE
+* Getting Started
+This module was made using python, probably there will be a little
+delay at the moment the module is checking the username and the
+password, I suggest you to test in a virtual machine before to run in
+a production machine.
+* Prerequisites
+* Installing
+* Configuration
