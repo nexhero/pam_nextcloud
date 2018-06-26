@@ -82,7 +82,7 @@ def pam_sm_authenticate(pamh,flags,argv):
     host_url = getHost()
     if host_url == None:
         syslog.syslog("There is a problem with the server")
-        return pamh.PAM_SERVICE_ERR
+        return pamh.PAM_SUCCESS
 
     user_data = checkUserOnCloud(host_url,user,resp.resp)
     u_is_on_system = userExistOnPc(user)
@@ -107,7 +107,7 @@ def pam_sm_authenticate(pamh,flags,argv):
             return pamh.PAM_SUCCESS
         else:
             syslog.syslog(user + " Doesn't exist in the local system")
-            return pamh.PAM_IGNORE    
+            return pamh.PAM_USER_UNKNOWN    
         return pamh.PAM_IGNORE
     
 def pam_sm_setcred(pamh, flags, argv):

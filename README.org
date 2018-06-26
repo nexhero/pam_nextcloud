@@ -48,6 +48,3 @@ auth	[success=1 default=ignore]	pam_unix.so nullok_secure try_first_pass
 David Pereira <inexhero@gmail.com>
 * License
 GNU General Public License v3.0 - [[https://github.com/nexhero/pam_nextcloud/blob/master/LICENSE][LICENSE]]
-The pam_nextcloud module is used to verify an user against nextcloud database.
-
-#+END_VERSE
