@@ -8,7 +8,7 @@ I started this project because I would like to use something similar to Chrome O
 * Prerequisites
 ** Python 3
 ** pam_python
-   [[http://pam-python.sourceforge.net/][pam-python]] is a pam module that runs the python interpreter thus allowing PAM Modules to be written in python.
+   [[http://pam-python.sourceforge.net/][pam-python]] is a PAM module that runs the python interpreter thus allowing PAM Modules to be written in python.
 ** python-pip
    [[https://pypi.org/project/pip/][pypi]] is a tool for install Python packages.
 ** pyocclient
