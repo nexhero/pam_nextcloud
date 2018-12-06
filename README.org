@@ -2,9 +2,9 @@
 #+TITLE: PAM__NEXTCLOUD
 The pam_nextcloud is a Pluggable Authenication Module (PAM) module used to verify a user against a cloud service's database. The cloud service supported be Nextcloud or Owncloud [not tested]. The idea is simple, convert any Linux distribution into a cloud OS, something similar to Chrome OS or Chromium OS, but not using any Google services.-
 * Motivation
-I started this project because I would like to use something similar to Chrome OS without Google Drive and fully opensource. 
+I started this project because I would like to use something similar to Chrome OS without Google Drive and that is fully opensource. 
 * Getting Started
- You may experience some delay uring the moments where the module is validating the username and password with the server. It is reccommended to test in virtual machine prior to usage in a personal computer.
+ You may experience some delay duing the moments where the module is validating the username and password with the server. It is reccommended to test in virtual machine prior to usage in a personal computer.
 * Prerequisites
 ** Python 3
 ** pam_python
