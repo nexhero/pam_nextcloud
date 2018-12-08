@@ -1,18 +1,19 @@
 #+OPTIONS: num:nil toc:nil
 #+TITLE: PAM__NEXTCLOUD
-The pam_nextcloud module is used to verify an user against the database from a cloud service. The cloud service could be Nextcloud or Ownclou[not tested]. The idea is simple, convert any Linux distribution into a cloud OS, something similar to Chrome OS or Chromium OS, but not using any google service.-
+The pam_nextcloud is a Pluggable Authenication Module (PAM) module used to verify a user against a cloud service's database. The cloud service supported be Nextcloud or Owncloud [not tested]. The idea is simple, convert any Linux distribution into a cloud OS, something similar to Chrome OS or Chromium OS, but not using any Google services.-
 * Motivation
-I started this project because I would like to use something similar to Chrome OS whitout Google Drive, and full Open Source. 
+I started this project because I would like to use something similar to Chrome OS without Google Drive and that is fully opensource. 
 * Getting Started
-This module was made in python, you may get some delay at the moment the module is validating the username and password in the server, I suggest you to test in a virtual machine before to use in your personal computer.
+ You may experience some delay duing the moments where the module is validating the username and password with the server. It is reccommended to test in virtual machine prior to usage in a personal computer.
 * Prerequisites
+** Python 3
 ** pam_python
-   [[http://pam-python.sourceforge.net/][pam-python]] is a pam module that runs the python interpreterm thus allowing PAM Modules to be written in python.
+   [[http://pam-python.sourceforge.net/][pam-python]] is a PAM module that runs the python interpreter thus allowing PAM Modules to be written in python.
 ** python-pip
    [[https://pypi.org/project/pip/][pypi]] is a tool for install Python packages.
 ** pyocclient
    [[https://github.com/owncloud/pyocclient][pyocclient]] a python client library for owncloud/nextcloud.
-* Installing
+* Installation
 Clone the repository.
 #+BEGIN_EXAMPLE
 git clone https://github.com/nexhero/pam_nextcloud.git
@@ -29,8 +30,8 @@ Create the conf file that holds the url server
 #+BEGIN_EXAMPLE
 echo "https://url" > /etc/sync_os.conf
 #+END_EXAMPLE
-As root me need to modify some pam files, don't worry I got your back!.
-Open with any editor the file /etc/pam.d/common-auth
+We'll need to modify some PAM files as root. Don't worry I've got your back!.
+Open with any text editor the file /etc/pam.d/common-auth
 Add this line.
 #+BEGIN_EXAMPLE
 @include nextcloud-login
@@ -38,7 +39,7 @@ Add this line.
 
 In the next line
 #+BEGIN_EXAMPLE
-auth	[success=1 default=ignore]	pam_unix.so nullok_secure
+auth [success=1 default=ignore]	pam_unix.so nullok_secure
 #+END_EXAMPLE
 Change to.
 #+BEGIN_EXAMPLE
